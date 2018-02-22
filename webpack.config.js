@@ -18,18 +18,23 @@ module.exports = {
   ],
   module: {
     loaders: [
-    // js
-    {
-      test: /\.jsx$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'client')
-    },
-    // CSS
-    { 
-      test: /\.styl$/, 
-      include: path.join(__dirname, 'client'),
-      loader: 'style-loader!css-loader!stylus-loader'
-    }
+
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
+      // js
+      {
+        test: /\.jsx$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'client')
+      },
+      // CSS
+      {
+        test: /\.styl$/,
+        include: path.join(__dirname, 'client'),
+        loader: 'style-loader!css-loader!stylus-loader'
+      }
     ]
   }
 };

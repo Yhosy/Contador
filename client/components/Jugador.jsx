@@ -1,9 +1,12 @@
 import React from 'react';
-import './jugador.css';
+// import styles from '../styles/jugador.css';
+
+const buttonStyles = {
+	padding: '30px'
+}
 
 
-
-const Component = React.createClass({
+const Jugador = React.createClass({
 
 	getInitialState: function () {
 		console.log("Estoy en el initial state...");
@@ -12,10 +15,8 @@ const Component = React.createClass({
 	},
 
 	sumar_vida() {
-
 		let vida=++this.state.vida;
 		this.setState({ vida: vida });
-
 	},
 
 	restar_vida() {
@@ -29,7 +30,7 @@ const Component = React.createClass({
 				<h2>Jugador 1</h2>
 				<div>
 
-					<button className="btn" onClick={this.sumar_vida}>+</button>
+					<button onClick={this.sumar_vida} style={buttonStyles}>+</button>
 					<label htmlFor="">{this.state.vida}</label>
 					<button onClick={this.restar_vida}>-</button>
 
@@ -39,4 +40,4 @@ const Component = React.createClass({
 	}
 })
 
-export default Component;
+export default Jugador;
